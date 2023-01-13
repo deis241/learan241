@@ -1,0 +1,24 @@
+
+
+bases de dart : 
+
+    -boucles 
+    -function
+    -Variables
+    -
+
+
+
+
+    POO 
+
+    -Objets 
+    -Def class 
+    -Héritage
+    -Interface
+    -Polymorphisme
+    -Encapsulation
+    -Enum 
+    -Methodes 
+    -Namespaces
+    -Construteur
