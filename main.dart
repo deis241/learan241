@@ -1,3 +1,7 @@
 void main() {
-  print("hello world je viens de changer le code 12345");
+  List list = ["Deis", "Mapson", 3, "Owendo"];
+
+  list.forEach(print);
+
+  print(list);
 }
