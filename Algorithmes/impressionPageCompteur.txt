@@ -1,0 +1,14 @@
+Nom : Impression de la page
+
+variables: 
+
+entier i = 0;
+chaîne de caractères s = "C:\Rapport.txt";
+
+Debut 
+
+pour i allant de 1 à 5 faire
+
+afficher(s);
+
+fin pour

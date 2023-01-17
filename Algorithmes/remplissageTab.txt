@@ -1,0 +1,11 @@
+Nom : Remplissage Tableau 
+
+variables : 
+  i =  0;
+  Tableau =  Tableau[100];
+
+debut
+pour i allant de 1 a 100 faire
+  Tableau[i] := i;
+
+fin pour;
