@@ -1,0 +1,32 @@
+Algorithme MatriceRemplissage 
+
+
+Declaration
+
+constante 
+     M = 100
+     N = 100 
+
+variable 
+  A: Tableau de N*M entier;
+  val,i,j;
+
+Debut 
+
+   val = 0;
+   Pour i allant de 1 a N Faire 
+      Pour j allant de 1 a M Faire 
+            Debut 
+                A(i,j) = val;
+                val = val+1
+            Fin
+        FinPour
+    FinPour
+    Pour i allant de 1 a N Faire 
+       Pour j allant de 1 a M faire 
+             Ecrire (A(i,j));
+        FinPour
+    FinPour
+Fin
+
+
