@@ -2,7 +2,7 @@ void main() {
   const int M = 5;
   const int N = 5;
 
-  List<int> tab = [M * N];
+  List<int> tab = [M];
 
   int val, j, i;
 
