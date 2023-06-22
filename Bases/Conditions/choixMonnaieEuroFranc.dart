@@ -1,7 +1,6 @@
 import 'dart:io';
 
 void main() {
-  const int euro = 1;
   const int franc = 655;
 
   int choixDevise;
