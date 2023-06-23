@@ -12,14 +12,14 @@ void main() {
   print("Entrer le prenom ");
   prenom = stdin.readLineSync()!;
 
-  // print("Entrer le date_naissance ");
-  // date_naissance = stdin.readLineSync()!;
+  print("Entrer le date_naissance ");
+  date_naissance = stdin.readLineSync()!;
 
-  // while (dates.length != 3) {
-  //   print("Entrer la date_examen ");
-  //   date_examen = stdin.readLineSync()!;
-  //   dates.add(date_examen);
-  // }
+  while (dates.length != 3) {
+    print("Entrer la date examen ");
+    date_examen = stdin.readLineSync()!;
+    dates.add(date_examen);
+  }
 
   moyenne(n1, n2, n3) {
     double? moy = 0.0;
@@ -29,13 +29,19 @@ void main() {
 
   var resul = moyenne(18, 14, 19);
 
+  var qccm = (resul! * 40) / 100;
+  var tp = (resul * 60) / 100;
+
   void displayElement(String mention) {
     var fullName = nom + '' + prenom;
+
     print(
-        """ Brvao au candidat numero : $id \n vous avez obtenue une moyenne de : $resul avec une mention $mention \n toute nos félicitation a vous $fullName """);
+        """Bravo au candidat numero : $id \n vous avez obtenue une moyenne de : $resul avec une mention  $mention   \n toute nos félicitation a vous $fullName \n
+        Voici la repartition de vos notes \n vous avez obtenu une moyenne en QCM de : $qccm % \n
+        vous avez obtenu une moyenne en TP de : $tp % """);
   }
 
-  if (resul! >= 16 && resul <= 20) {
+  if (resul >= 16 && resul <= 20) {
     displayElement("Tres bien");
   } else if (resul >= 14 && resul <= 16) {
     displayElement("Bien");
