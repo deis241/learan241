@@ -37,6 +37,7 @@ void main() {
 
     print(
         """Bravo au candidat numero : $id \n vous avez obtenue une moyenne de : $resul avec une mention  $mention   \n toute nos félicitation a vous $fullName \n
+        ne le $date_naissance.
         Voici la repartition de vos notes \n vous avez obtenu une moyenne en QCM de : $qccm % \n
         vous avez obtenu une moyenne en TP de : $tp % """);
   }
