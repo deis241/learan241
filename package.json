@@ -1,0 +1,10 @@
+{
+  "name": "apprentissage-js",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Algorithmes d'apprentissage (portage JS) avec menu interactif",
+  "main": "js/menu.js",
+  "scripts": {
+    "start": "node js/menu.js"
+  }
+}
