@@ -1,118 +1,241 @@
 <!doctype html>
 <html lang="fr">
-<head>
-<meta charset="utf-8">
-<title>Challenge 15 jours</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
-<style>
-  :root {
-    --accent: #f2b134;
-    --bg: #14120f;
-    --fg: #f5f1ea;
-    --muted: #9a948a;
-    --border: #35312a;
-    --cell-border: #4a453d;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #0a0908; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 40px 0; font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; }
-  .export-btn {
-    padding: 14px 28px; background: var(--accent); color: #14120f; border: none;
-    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 16px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
-  }
-  .export-btn:hover { opacity: .85; }
-  .export-btn:disabled { opacity: .6; cursor: wait; }
-  .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
-  .card {
-    width: 1080px; height: 1080px; background: var(--bg); color: var(--fg);
-    padding: 64px; display: flex; flex-direction: column; justify-content: space-between;
-    position: relative; overflow: hidden;
-  }
-  .overline { display: flex; align-items: center; gap: 10px; font-size: 20px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-  .overline .accent { color: var(--accent); }
-  .hero { display: flex; flex-direction: column; gap: 28px; }
-  .hero-row { display: flex; align-items: baseline; gap: 24px; }
-  .hero-number { font-size: 300px; font-weight: 700; line-height: .8; color: var(--fg); }
-  .hero-side { display: flex; flex-direction: column; gap: 8px; }
-  .hero-jours { font-size: 64px; font-weight: 700; line-height: 1; color: var(--fg); }
-  .hero-sub { font-size: 30px; font-weight: 500; color: var(--accent); }
-  .hero-desc { margin: 0; max-width: 820px; font-size: 28px; line-height: 1.45; color: #c9c3b8; font-weight: 500; }
-  .strip { border: 1.5px solid var(--border); padding: 24px 28px; display: flex; align-items: center; gap: 16px; font-size: 24px; color: #c9c3b8; }
-  .strip .accent { color: var(--accent); }
-  .tracker-block { display: flex; flex-direction: column; gap: 16px; }
-  .tracker-label { font-size: 20px; letter-spacing: .04em; color: var(--accent); }
-  .tracker { display: flex; gap: 10px; }
-  .cell { width: 32px; height: 32px; border: 1.5px solid var(--cell-border); }
-  .cell.filled { background: var(--accent); border-color: var(--accent); }
-  .footer { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; color: var(--muted); letter-spacing: .04em; }
-  .footer .accent { color: var(--accent); }
-</style>
-</head>
-<body>
-  <div class="card">
-    <div class="overline mono"><span class="accent">//</span><span>mapson241 — challenge algo</span></div>
-
-    <div class="hero">
-      <div class="hero-row">
-        <span class="hero-number">15</span>
-        <div class="hero-side">
-          <span class="hero-jours">JOURS</span>
-          <span class="hero-sub mono">→ 15 algorithmes</span>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Challenge 15 jours</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
+    <style>
+      :root {
+        --accent: #f2b134;
+        --bg: #14120f;
+        --fg: #f5f1ea;
+        --muted: #9a948a;
+        --border: #35312a;
+        --cell-border: #4a453d;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #0a0908;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        padding: 40px 0;
+        font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      }
+      .export-btn {
+        padding: 14px 28px;
+        background: var(--accent);
+        color: #14120f;
+        border: none;
+        font-family:
+          "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .export-btn:hover {
+        opacity: 0.85;
+      }
+      .export-btn:disabled {
+        opacity: 0.6;
+        cursor: wait;
+      }
+      .mono {
+        font-family:
+          "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      .card {
+        width: 1080px;
+        height: 1080px;
+        background: var(--bg);
+        color: var(--fg);
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+      .overline {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .overline .accent {
+        color: var(--accent);
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .hero-row {
+        display: flex;
+        align-items: baseline;
+        gap: 24px;
+      }
+      .hero-number {
+        font-size: 300px;
+        font-weight: 700;
+        line-height: 0.8;
+        color: var(--fg);
+      }
+      .hero-side {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .hero-jours {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--fg);
+      }
+      .hero-sub {
+        font-size: 30px;
+        font-weight: 500;
+        color: var(--accent);
+      }
+      .hero-desc {
+        margin: 0;
+        max-width: 820px;
+        font-size: 28px;
+        line-height: 1.45;
+        color: #c9c3b8;
+        font-weight: 500;
+      }
+      .strip {
+        border: 1.5px solid var(--border);
+        padding: 24px 28px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 24px;
+        color: #c9c3b8;
+      }
+      .strip .accent {
+        color: var(--accent);
+      }
+      .tracker-block {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .tracker-label {
+        font-size: 20px;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+      }
+      .tracker {
+        display: flex;
+        gap: 10px;
+      }
+      .cell {
+        width: 32px;
+        height: 32px;
+        border: 1.5px solid var(--cell-border);
+      }
+      .cell.filled {
+        background: var(--accent);
+        border-color: var(--accent);
+      }
+      .footer {
+        border-top: 1px solid var(--border);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+      .footer .accent {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="overline mono">
+        <span class="accent">//</span><span>mapson241 — challenge algo</span>
       </div>
-      <p class="hero-desc">
-        Un algorithme par jour. Du pseudocode à l'implémentation, en Dart puis en JavaScript.
-      </p>
+
+      <div class="hero">
+        <div class="hero-row">
+          <span class="hero-number">15</span>
+          <div class="hero-side">
+            <span class="hero-jours">JOURS</span>
+            <span class="hero-sub mono">→ 15 algorithmes</span>
+          </div>
+        </div>
+        <p class="hero-desc">
+          Un algorithme par jour. Du pseudocode à l'implémentation,
+          en JavaScript.
+        </p>
+      </div>
+
+      <div class="strip mono">
+        <span>pseudocode</span>
+        <span class="accent">→</span>
+        <span>javascript</span>
+      </div>
+
+      <div class="tracker-block">
+        <div class="tracker-label mono" id="tracker-label"></div>
+        <div class="tracker" id="tracker"></div>
+      </div>
+
+      <div class="footer mono">
+        <span>mapson241</span>
+        </span>Full Js -  javascript</span>
+      </div>
     </div>
 
-    <div class="strip mono">
-      <span>pseudocode</span>
-      <span class="accent">→</span>
-      <span>dart</span>
-      <span class="accent">→</span>
-      <span>javascript</span>
-    </div>
+    <button class="export-btn" id="export-btn">Exporter en PNG</button>
 
-    <div class="tracker-block">
-      <div class="tracker-label mono" id="tracker-label"></div>
-      <div class="tracker" id="tracker"></div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+      // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
+      const CURRENT_DAY = 1;
 
-    <div class="footer mono">
-      <span>mapson241</span>
-      <span>dart <span class="accent">→</span> javascript</span>
-    </div>
-  </div>
+      document.getElementById("tracker-label").textContent =
+        `jour ${String(CURRENT_DAY).padStart(2, "0")} / 15`;
 
-  <button class="export-btn" id="export-btn">Exporter en PNG</button>
+      const trackerEl = document.getElementById("tracker");
+      for (let i = 1; i <= 15; i++) {
+        const cell = document.createElement("div");
+        cell.className = "cell" + (i <= CURRENT_DAY ? " filled" : "");
+        trackerEl.appendChild(cell);
+      }
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script>
-    // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 1;
-
-    document.getElementById('tracker-label').textContent = `jour ${String(CURRENT_DAY).padStart(2, '0')} / 15`;
-
-    const trackerEl = document.getElementById('tracker');
-    for (let i = 1; i <= 15; i++) {
-      const cell = document.createElement('div');
-      cell.className = 'cell' + (i <= CURRENT_DAY ? ' filled' : '');
-      trackerEl.appendChild(cell);
-    }
-
-    const exportBtn = document.getElementById('export-btn');
-    exportBtn.addEventListener('click', () => {
-      exportBtn.disabled = true;
-      exportBtn.textContent = 'Export en cours...';
-      html2canvas(document.querySelector('.card'), { scale: 2 }).then((canvas) => {
-        const link = document.createElement('a');
-        link.download = 'challenge-15-jours-annonce.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-        exportBtn.disabled = false;
-        exportBtn.textContent = 'Exporter en PNG';
+      const exportBtn = document.getElementById("export-btn");
+      exportBtn.addEventListener("click", () => {
+        exportBtn.disabled = true;
+        exportBtn.textContent = "Export en cours...";
+        html2canvas(document.querySelector(".card"), { scale: 2 }).then(
+          (canvas) => {
+            const link = document.createElement("a");
+            link.download = "challenge-15-jours-annonce.png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+            exportBtn.disabled = false;
+            exportBtn.textContent = "Exporter en PNG";
+          },
+        );
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

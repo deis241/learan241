@@ -1,0 +1,43 @@
+ALGORITHME FACTORIELLE
+=======================
+
+Definition : factorielle(n) = n * (n-1) * (n-2) * ... * 1
+             factorielle(0) = 1
+             factorielle(n) non defini si n < 0
+
+
+--- Version 1 : ITERATIVE ---
+
+ALGORITHME Factorielle_Iterative
+DONNEES : n (entier positif ou nul)
+RESULTAT : produit de 1 a n
+
+DEBUT
+    resultat <- 1
+    POUR i DE 1 A n FAIRE
+        resultat <- resultat * i
+    FIN POUR
+    RETOURNER resultat
+FIN
+
+
+--- Version 2 : RECURSIVE ---
+
+ALGORITHME Factorielle_Recursive(n)
+DONNEES : n (entier positif ou nul)
+RESULTAT : produit de 1 a n
+
+DEBUT
+    SI n <= 1 ALORS
+        RETOURNER 1
+    SINON
+        RETOURNER n * Factorielle_Recursive(n - 1)
+    FIN SI
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- n = 0  -> retourne 1
+- n = 1  -> retourne 1
+- n < 0  -> cas non defini (erreur)

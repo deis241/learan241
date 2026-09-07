@@ -32,15 +32,19 @@
   .header { display: flex; flex-direction: column; gap: 20px; }
   .day-row { display: flex; align-items: baseline; gap: 20px; }
   .day-label-static { font-size: 32px; font-weight: 500; color: var(--muted); letter-spacing: .04em; }
-  #day-number { font-size: 220px; font-weight: 700; line-height: .8; color: var(--accent); }
+  #day-number { font-size: 160px; font-weight: 700; line-height: .8; color: var(--accent); }
   .tracker { display: flex; gap: 10px; }
   .cell { width: 32px; height: 32px; border: 1.5px solid var(--cell-border); }
   .cell.filled { background: var(--accent); border-color: var(--accent); }
   .section { border-top: 1px solid var(--border); padding-top: 28px; display: flex; flex-direction: column; gap: 10px; }
   .section-label { font-size: 18px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
   .algo-title { font-size: 32px; font-weight: 700; color: var(--fg); }
-  .learned { border: 1.5px solid var(--border); padding: 32px; display: flex; flex-direction: column; gap: 14px; flex-grow: 1; }
-  .learned-text { font-size: 27px; line-height: 1.55; color: #c9c3b8; font-weight: 500; }
+  .learned { border: 1.5px solid var(--border); padding: 28px 32px; display: flex; flex-direction: column; gap: 12px; }
+  .learned-text { font-size: 24px; line-height: 1.5; color: #c9c3b8; font-weight: 500; }
+  .captures { display: flex; gap: 18px; flex-grow: 1; }
+  .capture { flex: 1; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .capture img { width: 100%; height: 100%; object-fit: cover; object-position: top; border: 1.5px solid var(--border); }
+  .capture-label { font-size: 16px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
   .footer { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; color: var(--muted); letter-spacing: .04em; }
   .footer .accent { color: var(--accent); }
 </style>
@@ -61,14 +65,26 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Recherche du mois selon le nombre de jours</div>
+      <div class="algo-title">Factorielle — itérative &amp; récursive</div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Aujourd'hui, j'ai compris pourquoi tester les cas limites (0, valeur négative, tableau vide) évite la majorité des bugs — et pas seulement le cas "normal" auquel je pense en premier.
+        Une fonction récursive a besoin d'un cas de base atteignable, sinon c'est la récursion infinie. Et un code plus court (reduce, ternaire) n'est pas toujours meilleur : il peut avaler silencieusement un cas limite comme n &lt; 0.
+      </div>
+    </div>
+
+    <div class="captures">
+      <!-- Remplace les images ci-dessous par les captures du jour -->
+      <div class="capture">
+        <span class="capture-label mono">itératif</span>
+        <img src="captures/jour-1-factorielle-iterative.png" alt="Terminal : exécution de la version itérative">
+      </div>
+      <div class="capture">
+        <span class="capture-label mono">récursif</span>
+        <img src="captures/jour-1-factorielle-recursive.png" alt="Terminal : exécution de la version récursive">
       </div>
     </div>
 
