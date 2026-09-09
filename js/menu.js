@@ -5,7 +5,8 @@ const categories = [
     name: 'Boucles & Conditions',
     algos: [
       require('./algos/boucles/factorielle'),
-      require('./algos/boucles/factoriellerecusive')
+      require('./algos/boucles/factoriellerecusive'),
+      require('./algos/conditions/anagrame'),
     ],
   },
 

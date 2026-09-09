@@ -65,32 +65,27 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Factorielle — itérative &amp; récursive</div>
+      <div class="algo-title">Détecteur d'anagramme</div>
+    </div>
+
+    <div class="learned">
+      <div class="section-label mono">définition — anagramme</div>
+      <div class="learned-text">
+        Un mot obtenu en réarrangeant toutes les lettres d'un autre mot, sans en ajouter ni en enlever. Exemples : <span class="mono" style="color: var(--accent);">AIMER</span> / <span class="mono" style="color: var(--accent);">MARIE</span> et <span class="mono" style="color: var(--accent);">CHIEN</span> / <span class="mono" style="color: var(--accent);">NICHE</span> utilisent chacun exactement les mêmes lettres.
+      </div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Une fonction récursive a besoin d'un cas de base atteignable, sinon c'est la récursion infinie. Et un code plus court (reduce, ternaire) n'est pas toujours meilleur : il peut avaler silencieusement un cas limite comme n &lt; 0.
-      </div>
-    </div>
-
-    <div class="captures">
-      <!-- Remplace les images ci-dessous par les captures du jour -->
-      <div class="capture">
-        <span class="capture-label mono">itératif</span>
-        <img src="captures/jour-1-factorielle-iterative.png" alt="Terminal : exécution de la version itérative">
-      </div>
-      <div class="capture">
-        <span class="capture-label mono">récursif</span>
-        <img src="captures/jour-1-factorielle-recursive.png" alt="Terminal : exécution de la version récursive">
+        Une boucle doit couvrir toute la structure qu'elle vérifie : un tableau de 26 cases (A à Z) avec une boucle qui s'arrête à l'indice 25 oublie carrément la lettre Z. Et une méthode native peut sembler suffire sans l'être : <span class="mono">trim()</span> ne retire que les espaces en bord de mot, pas ceux à l'intérieur.
       </div>
     </div>
 
     <div class="footer mono">
       <span>mapson241</span>
-      <span>dart <span class="accent">→</span> javascript</span>
+      </span> javascript</span>
     </div>
   </div>
 
@@ -99,7 +94,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 1;
+    const CURRENT_DAY = 2;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 

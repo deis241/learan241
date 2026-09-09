@@ -1,0 +1,57 @@
+3.12 DETECTEUR D'ANAGRAMME
+===========================
+
+Ce programme recherche la presence d'anagramme entre les deux mots
+saisis par l'utilisateur.
+
+L'anagramme est un ensemble de lettres qui permettent d'ecrire au
+moins deux mots differents.
+
+Exemple : "AIMER" et "MARIE" sont des anagrammes.
+
+
+--- Algorithme ---
+
+ALGORITHME DetecteurAnagramme
+DONNEES : mot1, mot2 (chaines de caracteres)
+RESULTAT : indique si mot1 et mot2 sont des anagrammes
+
+DEBUT
+    mot1 <- MAJUSCULE(mot1)
+    mot2 <- MAJUSCULE(mot2)
+
+    SI LONGUEUR(mot1) <> LONGUEUR(mot2) ALORS
+        ECRIRE "pas des anagrammes"
+        FIN
+    FIN SI
+
+    TABLEAU occurrences[26] D'ENTIERS <- tous a 0
+
+    POUR chaque lettre c DE mot1 FAIRE
+        occurrences[c - 'A'] <- occurrences[c - 'A'] + 1
+    FIN POUR
+
+    POUR chaque lettre c DE mot2 FAIRE
+        occurrences[c - 'A'] <- occurrences[c - 'A'] - 1
+    FIN POUR
+
+    anagramme <- VRAI
+    POUR i DE 0 A 25 FAIRE
+        SI occurrences[i] <> 0 ALORS
+            anagramme <- FAUX
+        FIN SI
+    FIN POUR
+
+    SI anagramme = VRAI ALORS
+        ECRIRE "anagrammes"
+    SINON
+        ECRIRE "pas des anagrammes"
+    FIN SI
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- longueurs differentes  -> jamais anagrammes (sortie immediate)
+- majuscules/minuscules  -> normaliser avant de comparer
+- espaces dans les mots  -> a retirer avant de comparer
