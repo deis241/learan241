@@ -1,0 +1,48 @@
+3.3 RECHERCHE LE(S) MOIS CORRESPONDANTS
+=========================================
+
+Cet algorithme affiche le ou les mois (en lettres) dont le nombre de
+jours correspond a la valeur saisie par l'utilisateur.
+
+Exemple : l'utilisateur saisit 31, le programme affiche
+"Janvier, Mars, Mai, Juillet, Aout, Octobre, Decembre".
+
+
+--- Algorithme ---
+
+ALGORITHME RechercheMois
+DONNEES : nombreJours (entier)
+RESULTAT : affiche tous les mois ayant ce nombre de jours
+
+DEBUT
+    TABLEAU mois[12] DE CHAINES <-
+        ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin",
+         "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"]
+
+    TABLEAU joursParMois[12] D'ENTIERS <-
+        [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    trouve <- FAUX
+
+    POUR i DE 0 A 11 FAIRE
+        SI joursParMois[i] = nombreJours ALORS
+            ECRIRE mois[i]
+            trouve <- VRAI
+        FIN SI
+    FIN POUR
+
+    SI trouve = FAUX ALORS
+        ECRIRE "aucun mois ne correspond a ce nombre de jours"
+    FIN SI
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- nombreJours = 31       -> Janvier, Mars, Mai, Juillet, Aout, Octobre, Decembre (7 mois)
+- nombreJours = 30       -> Avril, Juin, Septembre, Novembre (4 mois)
+- nombreJours = 28       -> Fevrier (annee non bissextile)
+- nombreJours = 29       -> Fevrier uniquement les annees bissextiles ; le
+                            tableau fixe ci-dessus ne le gere pas tel quel,
+                            c'est une limite connue de cette version simple
+- nombreJours < 1 ou > 31, ou non entier -> aucun mois ne correspond

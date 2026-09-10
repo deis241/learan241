@@ -7,6 +7,7 @@ const categories = [
       require('./algos/boucles/factorielle'),
       require('./algos/boucles/factoriellerecusive'),
       require('./algos/conditions/anagrame'),
+      require('./algos/conditions/rechercheMois'),
     ],
   },
 

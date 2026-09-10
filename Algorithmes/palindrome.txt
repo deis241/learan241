@@ -1,0 +1,45 @@
+3.11 DETECTEUR DE PALINDROME
+=============================
+
+Un palindrome est un mot qui peut se lire dans les deux sens, de
+gauche a droite comme de droite a gauche.
+
+Exemple : "ICI" est un palindrome de 3 lettres.
+
+
+--- Algorithme ---
+
+ALGORITHME DetecteurPalindrome
+DONNEES : mot (chaine de caracteres)
+RESULTAT : indique si mot est un palindrome, et sa longueur (nombre de lettres)
+
+DEBUT
+    mot <- MAJUSCULE(mot)
+    n <- LONGUEUR(mot)
+
+    estPalindrome <- VRAI
+    i <- 0
+    j <- n - 1
+
+    TANT QUE i < j FAIRE
+        SI mot[i] <> mot[j] ALORS
+            estPalindrome <- FAUX
+        FIN SI
+        i <- i + 1
+        j <- j - 1
+    FIN TANT QUE
+
+    SI estPalindrome = VRAI ALORS
+        ECRIRE mot, " est un palindrome (", n, " lettres)"
+    SINON
+        ECRIRE mot, " n'est pas un palindrome (", n, " lettres)"
+    FIN SI
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- mot vide (n = 0)       -> considere comme palindrome (rien a contredire)
+- mot d'une seule lettre -> toujours un palindrome
+- majuscules/minuscules  -> normaliser avant de comparer
+- espaces dans le mot    -> a retirer avant de comparer

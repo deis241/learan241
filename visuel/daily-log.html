@@ -47,6 +47,8 @@
   .capture-label { font-size: 16px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
   .footer { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; color: var(--muted); letter-spacing: .04em; }
   .footer .accent { color: var(--accent); }
+  .aside { display: flex; align-items: baseline; gap: 10px; font-size: 19px; line-height: 1.5; color: var(--muted); }
+  .aside-label { flex-shrink: 0; color: var(--accent); }
 </style>
 </head>
 <body>
@@ -65,13 +67,13 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Détecteur d'anagramme</div>
+      <div class="algo-title">Recherche du mois par nombre de jours</div>
     </div>
 
     <div class="learned">
-      <div class="section-label mono">définition — anagramme</div>
+      <div class="section-label mono">en bref</div>
       <div class="learned-text">
-        Un mot obtenu en réarrangeant toutes les lettres d'un autre mot, sans en ajouter ni en enlever. Exemples : <span class="mono" style="color: var(--accent);">AIMER</span> / <span class="mono" style="color: var(--accent);">MARIE</span> et <span class="mono" style="color: var(--accent);">CHIEN</span> / <span class="mono" style="color: var(--accent);">NICHE</span> utilisent chacun exactement les mêmes lettres.
+        L'utilisateur saisit un nombre de jours, l'algo affiche tous les mois qui comptent exactement ce nombre-là. Exemple : <span class="mono" style="color: var(--accent);">31</span> → Janvier, Mars, Mai, Juillet, Août, Octobre, Décembre.
       </div>
     </div>
 
@@ -79,8 +81,13 @@
       <div class="section-label mono">ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Une boucle doit couvrir toute la structure qu'elle vérifie : un tableau de 26 cases (A à Z) avec une boucle qui s'arrête à l'indice 25 oublie carrément la lettre Z. Et une méthode native peut sembler suffire sans l'être : <span class="mono">trim()</span> ne retire que les espaces en bord de mot, pas ceux à l'intérieur.
+        <span class="mono" style="color: var(--accent);">Array.from({ length: 12 }, (_, i) => ...)</span> construit un tableau à la volée : le premier argument fixe la taille, le second calcule chaque case à partir de son index. J'ai remplacé deux tableaux à recopier à la main (les 12 mois, leurs 12 nombres de jours) par deux calculs sur une <span class="mono">Date</span> — plus de liste figée à maintenir.
       </div>
+    </div>
+
+    <div class="aside mono">
+      <span class="aside-label">+</span>
+      <span>bonne pratique : l'affichage passe maintenant par une seule fonction, <span style="color: var(--accent);">displayConsole()</span>, au lieu d'un <span style="color: var(--accent);">console.log()</span> écrit à la main dans chaque algo.</span>
     </div>
 
     <div class="footer mono">
@@ -94,7 +101,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 2;
+    const CURRENT_DAY = 3;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 
