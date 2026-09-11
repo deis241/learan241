@@ -67,27 +67,27 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Recherche du mois par nombre de jours</div>
+      <div class="algo-title">Détecteur de palindrome</div>
     </div>
 
     <div class="learned">
-      <div class="section-label mono">en bref</div>
+      <div class="section-label mono">la notion</div>
       <div class="learned-text">
-        L'utilisateur saisit un nombre de jours, l'algo affiche tous les mois qui comptent exactement ce nombre-là. Exemple : <span class="mono" style="color: var(--accent);">31</span> → Janvier, Mars, Mai, Juillet, Août, Octobre, Décembre.
+        Un palindrome se lit pareil dans les deux sens : <span class="mono" style="color: var(--accent);">ICI</span>, <span class="mono" style="color: var(--accent);">RADAR</span>, <span class="mono" style="color: var(--accent);">KAYAK</span>. Pour le détecter, pas besoin de l'inverser : on compare le mot avec lui-même, lettre par lettre, en partant des deux bouts vers le centre.
       </div>
     </div>
 
     <div class="learned">
-      <div class="section-label mono">ce que j'ai appris</div>
+      <div class="section-label mono">côté tech — ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        <span class="mono" style="color: var(--accent);">Array.from({ length: 12 }, (_, i) => ...)</span> construit un tableau à la volée : le premier argument fixe la taille, le second calcule chaque case à partir de son index. J'ai remplacé deux tableaux à recopier à la main (les 12 mois, leurs 12 nombres de jours) par deux calculs sur une <span class="mono">Date</span> — plus de liste figée à maintenir.
+        Technique des <span class="mono" style="color: var(--accent);">deux pointeurs</span> : <span class="mono">i</span> part du début, <span class="mono">j</span> part de la fin, ils avancent l'un vers l'autre. Le mot était normalisé (majuscules, espaces retirés), mais la boucle comparait encore la chaîne brute — la normalisation ne servait qu'à l'affichage, pas à la détection.
       </div>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">+</span>
-      <span>bonne pratique : l'affichage passe maintenant par une seule fonction, <span style="color: var(--accent);">displayConsole()</span>, au lieu d'un <span style="color: var(--accent);">console.log()</span> écrit à la main dans chaque algo.</span>
+      <span>bonne pratique : normaliser une donnée une seule fois, puis toujours comparer sur cette version normalisée — ne jamais mélanger brute et normalisée dans la même logique.</span>
     </div>
 
     <div class="footer mono">
@@ -101,7 +101,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 3;
+    const CURRENT_DAY = 4;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 

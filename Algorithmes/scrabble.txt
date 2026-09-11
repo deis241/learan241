@@ -1,0 +1,74 @@
+3.10 COMPTEUR DE POINTS DES LETTRES SUR UN PUPITRE DU JEU DE SCRABBLE
+=======================================================================
+
+Au Scrabble, lorsque l'on recherche un mot, avant de le poser sur la
+grille du jeu, on tente d'obtenir un mot dont le nombre de points est
+le plus important.
+
+Dans cette optique, et sans prendre en compte l'endroit ou sera pose
+le mot sur la grille (incidence sur la valeur du mot : mot compte
+double ou triple, lettre compte double ou triple), ni le fait qu'une
+lettre deja posee servira a constituer le mot, on va calculer la
+valeur du mot, ce qui permettra de comparer les diverses propositions
+de mots entre elles.
+
+La valeur des lettres est la suivante :
+
+    a, e, i, l, n, o, r, s, t, u = 1 point
+    d, g, m                      = 2 points
+    b, c, p                      = 3 points
+    f, h, v                      = 4 points
+    j, q                         = 8 points
+    k, w, x, y, z                = 10 points
+
+Exemple : "ZOO" = 10 + 1 + 1 = 12 points.
+
+
+--- Algorithme ---
+
+ALGORITHME CompteurPointsScrabble
+DONNEES : mot (chaine de caracteres)
+RESULTAT : la valeur totale du mot en points
+
+DEBUT
+    mot <- MAJUSCULE(mot)
+    mot <- SUPPRIMER_ESPACES(mot)
+
+    TABLEAU valeurs[26] D'ENTIERS
+
+    POUR chaque lettre c DANS "AEILNORSTU" FAIRE
+        valeurs[c - 'A'] <- 1
+    FIN POUR
+    POUR chaque lettre c DANS "DGM" FAIRE
+        valeurs[c - 'A'] <- 2
+    FIN POUR
+    POUR chaque lettre c DANS "BCP" FAIRE
+        valeurs[c - 'A'] <- 3
+    FIN POUR
+    POUR chaque lettre c DANS "FHV" FAIRE
+        valeurs[c - 'A'] <- 4
+    FIN POUR
+    POUR chaque lettre c DANS "JQ" FAIRE
+        valeurs[c - 'A'] <- 8
+    FIN POUR
+    POUR chaque lettre c DANS "KWXYZ" FAIRE
+        valeurs[c - 'A'] <- 10
+    FIN POUR
+
+    total <- 0
+    POUR chaque lettre c DE mot FAIRE
+        total <- total + valeurs[c - 'A']
+    FIN POUR
+
+    ECRIRE mot, " vaut ", total, " points"
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- mot vide               -> 0 point
+- majuscules/minuscules  -> normaliser avant de calculer
+- espaces dans le mot    -> a retirer avant de calculer
+- lettre accentuee ou caractere non alphabetique -> a rejeter ou a
+  normaliser (ex: "E" pour "E"), sinon l'indice c - 'A' sort du
+  tableau valeurs[26]

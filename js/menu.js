@@ -9,6 +9,9 @@ const categories = [
       require('./algos/conditions/anagrame'),
       require('./algos/conditions/rechercheMois'),
       require('./algos/conditions/rechercheMoisRecursive'),
+      require('./algos/conditions/palindrome'),
+      require('./algos/conditions/scrabble'),
+
     ],
   },
 
