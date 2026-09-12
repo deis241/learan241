@@ -67,13 +67,13 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Détecteur de palindrome</div>
+      <div class="algo-title">Compteur de points Scrabble</div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">la notion</div>
       <div class="learned-text">
-        Un palindrome se lit pareil dans les deux sens : <span class="mono" style="color: var(--accent);">ICI</span>, <span class="mono" style="color: var(--accent);">RADAR</span>, <span class="mono" style="color: var(--accent);">KAYAK</span>. Pour le détecter, pas besoin de l'inverser : on compare le mot avec lui-même, lettre par lettre, en partant des deux bouts vers le centre.
+        Au Scrabble, chaque lettre vaut un nombre de points fixe selon sa rareté : les lettres courantes (<span class="mono" style="color: var(--accent);">A, E, I...</span>) valent 1 point, les plus rares (<span class="mono" style="color: var(--accent);">K, W, X, Y, Z</span>) en valent 10. La valeur d'un mot est simplement la somme des points de ses lettres.
       </div>
     </div>
 
@@ -81,13 +81,13 @@
       <div class="section-label mono">côté tech — ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Technique des <span class="mono" style="color: var(--accent);">deux pointeurs</span> : <span class="mono">i</span> part du début, <span class="mono">j</span> part de la fin, ils avancent l'un vers l'autre. Le mot était normalisé (majuscules, espaces retirés), mais la boucle comparait encore la chaîne brute — la normalisation ne servait qu'à l'affichage, pas à la détection.
+        Plutôt qu'un long <span class="mono" style="color: var(--accent);">switch</span> lettre par lettre, un objet de correspondance <span class="mono">{ lettre: points }</span> construit une seule fois à partir de groupes de lettres (<span class="mono">reduce</span>) donne une recherche en <span class="mono" style="color: var(--accent);">O(1)</span> par lettre du mot.
       </div>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">+</span>
-      <span>bonne pratique : normaliser une donnée une seule fois, puis toujours comparer sur cette version normalisée — ne jamais mélanger brute et normalisée dans la même logique.</span>
+      <span>bonne pratique : un caractère hors barème (accent, chiffre) ne fait pas planter le calcul — <span style="color: var(--accent);">?? 0</span> lui donne simplement une valeur nulle au lieu de <span style="color: var(--accent);">undefined</span>.</span>
     </div>
 
     <div class="footer mono">
@@ -101,7 +101,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 4;
+    const CURRENT_DAY = 5;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 
