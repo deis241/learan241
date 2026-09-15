@@ -11,6 +11,7 @@ const categories = [
       require('./algos/conditions/rechercheMoisRecursive'),
       require('./algos/conditions/palindrome'),
       require('./algos/conditions/scrabble'),
+      require('./algos/conditions/calculFraction'),
 
     ],
   },

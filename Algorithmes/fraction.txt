@@ -1,0 +1,40 @@
+3.9 CALCUL D'UNE FRACTION
+==========================
+
+Cet algorithme affiche le resultat d'une fraction de deux nombres
+entiers.
+
+L'utilisateur entre au clavier la valeur du numerateur ainsi que la
+valeur du denominateur. Le resultat s'affiche et le programme
+recommence la meme operation. L'arret de celui-ci est provoque
+uniquement lorsque l'utilisateur entre la valeur zero pour le
+denominateur (calcul impossible).
+
+
+--- Algorithme ---
+
+ALGORITHME CalculFraction
+DONNEES : numerateur, denominateur (entiers)
+RESULTAT : affiche numerateur / denominateur tant que denominateur <> 0
+
+DEBUT
+    LIRE numerateur
+    LIRE denominateur
+
+    TANT QUE denominateur <> 0 FAIRE
+        resultat <- numerateur / denominateur
+        ECRIRE "Le resultat est : ", resultat
+
+        LIRE numerateur
+        LIRE denominateur
+    FIN TANT QUE
+
+    ECRIRE "Calcul impossible : division par zero"
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- denominateur = 0       -> arret immediat, aucun calcul affiche
+- numerateur = 0         -> resultat 0 (calcul normal, pas un arret)
+- saisie non numerique   -> a valider avant de convertir en entier

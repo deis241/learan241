@@ -67,13 +67,13 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Compteur de points Scrabble</div>
+      <div class="algo-title">Calcul de fraction</div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">la notion</div>
       <div class="learned-text">
-        Au Scrabble, chaque lettre vaut un nombre de points fixe selon sa rareté : les lettres courantes (<span class="mono" style="color: var(--accent);">A, E, I...</span>) valent 1 point, les plus rares (<span class="mono" style="color: var(--accent);">K, W, X, Y, Z</span>) en valent 10. La valeur d'un mot est simplement la somme des points de ses lettres.
+        Diviser un numérateur par un dénominateur, encore et encore — jusqu'à ce qu'on demande l'impossible : diviser par <span class="mono" style="color: var(--accent);">0</span>. C'est ce zéro, et rien d'autre, qui doit arrêter le programme.
       </div>
     </div>
 
@@ -81,13 +81,13 @@
       <div class="section-label mono">côté tech — ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Plutôt qu'un long <span class="mono" style="color: var(--accent);">switch</span> lettre par lettre, un objet de correspondance <span class="mono">{ lettre: points }</span> construit une seule fois à partir de groupes de lettres (<span class="mono">reduce</span>) donne une recherche en <span class="mono" style="color: var(--accent);">O(1)</span> par lettre du mot.
+        Une boucle <span class="mono" style="color: var(--accent);">while (denominateur !== 0)</span> qui relit les deux valeurs à chaque tour : la condition d'arrêt n'est pas un compteur, mais une valeur saisie par l'utilisateur lui-même — le dénominateur devient sa propre condition de sortie.
       </div>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">+</span>
-      <span>bonne pratique : un caractère hors barème (accent, chiffre) ne fait pas planter le calcul — <span style="color: var(--accent);">?? 0</span> lui donne simplement une valeur nulle au lieu de <span style="color: var(--accent);">undefined</span>.</span>
+      <span>bonne pratique : centraliser l'affichage dans <span style="color: var(--accent);">displayConsole()</span> plutôt qu'un <span style="color: var(--accent);">console.log()</span> écrit à la main — cohérent avec tous les autres algos du projet.</span>
     </div>
 
     <div class="footer mono">
@@ -101,7 +101,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 5;
+    const CURRENT_DAY = 6;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 
