@@ -1,0 +1,42 @@
+CALCUL DU MODULO
+=================
+
+Cet algorithme calcule le reste de la division entiere (modulo) de
+deux nombres entiers saisis au clavier, sans utiliser l'operateur
+modulo natif : par soustractions successives du diviseur au
+dividende, jusqu'a ce que le reste devienne inferieur au diviseur.
+
+Exemple : 17 modulo 5 -> 17 - 5 - 5 - 5 = 2.
+
+
+--- Algorithme ---
+
+ALGORITHME CalculModulo
+DONNEES : dividende, diviseur (entiers)
+RESULTAT : affiche le reste de la division entiere de dividende par diviseur
+
+DEBUT
+    LIRE dividende
+    LIRE diviseur
+
+    SI diviseur = 0 ALORS
+        ECRIRE "Calcul impossible : division par zero"
+    SINON
+        reste <- dividende
+
+        TANT QUE reste >= diviseur FAIRE
+            reste <- reste - diviseur
+        FIN TANT QUE
+
+        ECRIRE dividende, " modulo ", diviseur, " = ", reste
+    FIN SI
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- diviseur = 0           -> calcul impossible, message d'erreur
+- dividende < diviseur   -> le reste est le dividende lui-meme (boucle ne s'execute pas)
+- dividende negatif      -> le resultat depend de la convention choisie
+                             (reste toujours positif, ou signe aligne sur le
+                             dividende) ; a documenter avant d'implementer

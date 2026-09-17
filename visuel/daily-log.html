@@ -67,13 +67,13 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Calcul de fraction</div>
+      <div class="algo-title">Calcul du modulo</div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">la notion</div>
       <div class="learned-text">
-        Diviser un numérateur par un dénominateur, encore et encore — jusqu'à ce qu'on demande l'impossible : diviser par <span class="mono" style="color: var(--accent);">0</span>. C'est ce zéro, et rien d'autre, qui doit arrêter le programme.
+        Le modulo, c'est le reste qu'il ne faut jamais oublier : on retire le diviseur du dividende, encore et encore, jusqu'à ce qu'il ne rentre plus. Ce qui reste à la fin — c'est lui, le résultat.
       </div>
     </div>
 
@@ -81,13 +81,13 @@
       <div class="section-label mono">côté tech — ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Une boucle <span class="mono" style="color: var(--accent);">while (denominateur !== 0)</span> qui relit les deux valeurs à chaque tour : la condition d'arrêt n'est pas un compteur, mais une valeur saisie par l'utilisateur lui-même — le dénominateur devient sa propre condition de sortie.
+        Une variable réassignée dans une boucle doit être en <span class="mono" style="color: var(--accent);">let</span>, jamais en <span class="mono" style="color: var(--accent);">const</span> — sinon <span class="mono" style="color: var(--accent);">TypeError</span> direct. Et un même calcul a souvent plusieurs chemins possibles (<span class="mono" style="color: var(--accent);">%</span> natif, division entière, récursion) : le bon choix dépend de la contrainte de l'exercice, pas de la solution la plus courte.
       </div>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">+</span>
-      <span>bonne pratique : centraliser l'affichage dans <span style="color: var(--accent);">displayConsole()</span> plutôt qu'un <span style="color: var(--accent);">console.log()</span> écrit à la main — cohérent avec tous les autres algos du projet.</span>
+      <span>bonne pratique : gérer le cas <span style="color: var(--accent);">diviseur = 0</span> avant tout calcul, avec un message clair plutôt qu'une boucle infinie ou une erreur silencieuse.</span>
     </div>
 
     <div class="footer mono">
@@ -101,7 +101,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 6;
+    const CURRENT_DAY = 7;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 

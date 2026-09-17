@@ -1,0 +1,34 @@
+3.4 CALCUL DE LA PUISSANCE
+===========================
+
+Cet algorithme affiche le resultat du calcul de la puissance de 2
+entiers, le second, entre au clavier, est l'exposant.
+
+Exemple : nombre = 2, exposant = 3 -> 2^3 = 8.
+
+
+--- Algorithme ---
+
+ALGORITHME CalculPuissance
+DONNEES : nombre, exposant (entiers)
+RESULTAT : affiche nombre eleve a la puissance exposant
+
+DEBUT
+    LIRE nombre
+    LIRE exposant
+
+    resultat <- 1
+    POUR i DE 1 A exposant FAIRE
+        resultat <- resultat * nombre
+    FIN POUR
+
+    ECRIRE nombre, " puissance ", exposant, " = ", resultat
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- exposant = 0           -> resultat = 1 (tout nombre puissance 0 vaut 1)
+- exposant negatif       -> non gere par une simple boucle multiplicative
+                             (resultat fractionnaire), a rejeter ou a signaler
+- nombre = 0, exposant = 0 -> convention a documenter (resultat souvent pris a 1)
