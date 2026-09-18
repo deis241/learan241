@@ -8,6 +8,7 @@ const categories = [
       require('./algos/boucles/factoriellerecusive'),
       require('./algos/boucles/modulo'),
       require('./algos/boucles/calculPuissance'),
+      require('./algos/boucles/matriceMultiplicationReel'),
       require('./algos/conditions/anagrame'),
       require('./algos/conditions/rechercheMois'),
       require('./algos/conditions/rechercheMoisRecursive'),

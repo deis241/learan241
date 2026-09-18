@@ -67,13 +67,13 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Calcul du modulo</div>
+      <div class="algo-title">Multiplication d'une matrice par un réel</div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">la notion</div>
       <div class="learned-text">
-        Le modulo, c'est le reste qu'il ne faut jamais oublier : on retire le diviseur du dividende, encore et encore, jusqu'à ce qu'il ne rentre plus. Ce qui reste à la fin — c'est lui, le résultat.
+        Multiplier une matrice par un réel, c'est multiplier chaque terme par ce réel, un par un. Le résultat garde exactement les mêmes dimensions que la matrice d'origine — rien ne bouge, tout est juste mis à l'échelle.
       </div>
     </div>
 
@@ -81,13 +81,13 @@
       <div class="section-label mono">côté tech — ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Une variable réassignée dans une boucle doit être en <span class="mono" style="color: var(--accent);">let</span>, jamais en <span class="mono" style="color: var(--accent);">const</span> — sinon <span class="mono" style="color: var(--accent);">TypeError</span> direct. Et un même calcul a souvent plusieurs chemins possibles (<span class="mono" style="color: var(--accent);">%</span> natif, division entière, récursion) : le bon choix dépend de la contrainte de l'exercice, pas de la solution la plus courte.
+        Une matrice, c'est un tableau de tableaux : construire, transformer et afficher suivent tous la même double boucle <span class="mono" style="color: var(--accent);">pour i, pour j</span>. Et pour des valeurs qui peuvent être décimales, <span class="mono" style="color: var(--accent);">parseFloat</span> remplace <span class="mono" style="color: var(--accent);">parseInt</span> — sinon la saisie est tronquée.
       </div>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">+</span>
-      <span>bonne pratique : gérer le cas <span style="color: var(--accent);">diviseur = 0</span> avant tout calcul, avec un message clair plutôt qu'une boucle infinie ou une erreur silencieuse.</span>
+      <span>bonne pratique : réutiliser la même structure de double boucle à chaque étape (lecture, calcul, affichage) — le code reste lisible parce que le schéma ne change pas.</span>
     </div>
 
     <div class="footer mono">
@@ -101,7 +101,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 7;
+    const CURRENT_DAY = 10;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 

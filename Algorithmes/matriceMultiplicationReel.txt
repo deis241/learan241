@@ -1,0 +1,51 @@
+3.14 MULTIPLICATION D'UNE MATRICE PAR UN REEL
+===============================================
+
+Cet algorithme multiplie une matrice par un reel (un scalaire).
+
+La multiplication d'une matrice par un reel se fait en multipliant
+chaque terme de la matrice par ce reel. Le resultat est une matrice
+de meme format (memes dimensions) que la matrice d'origine.
+
+Exemple : la matrice [[1, 2], [3, 4]] multipliee par 2 donne
+[[2, 4], [6, 8]].
+
+
+--- Algorithme ---
+
+ALGORITHME MultiplicationMatriceReel
+DONNEES : nbLignes, nbColonnes (entiers), A (matrice de reels de
+          nbLignes x nbColonnes), reel (reel)
+RESULTAT : affiche la matrice A multipliee par reel
+
+DEBUT
+    LIRE nbLignes
+    LIRE nbColonnes
+
+    POUR i ALLANT DE 1 A nbLignes FAIRE
+        POUR j ALLANT DE 1 A nbColonnes FAIRE
+            LIRE A(i, j)
+        FIN POUR
+    FIN POUR
+
+    LIRE reel
+
+    POUR i ALLANT DE 1 A nbLignes FAIRE
+        POUR j ALLANT DE 1 A nbColonnes FAIRE
+            A(i, j) <- A(i, j) * reel
+        FIN POUR
+    FIN POUR
+
+    POUR i ALLANT DE 1 A nbLignes FAIRE
+        POUR j ALLANT DE 1 A nbColonnes FAIRE
+            ECRIRE A(i, j)
+        FIN POUR
+    FIN POUR
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- reel = 0               -> la matrice resultat est entierement nulle
+- reel = 1                -> la matrice resultat est identique a l'originale
+- nbLignes ou nbColonnes <= 0 -> matrice invalide, rien a calculer
