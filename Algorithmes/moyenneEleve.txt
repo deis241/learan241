@@ -1,0 +1,95 @@
+4.1 CALCUL DE LA MOYENNE D'UN ELEVE
+====================================
+
+Cet algorithme calcule la moyenne generale d'un unique eleve sur trois
+matieres de meme poids : ALGO, C et JAVA.
+
+Pour chaque matiere, la note finale est composee d'un controle QCM
+comptant pour 40 %, et de deux travaux pratiques (TP) comptant pour
+30 % chacun.
+
+L'eleve renseigne d'abord son nom, son prenom, son ID SUPINFO, sa date
+de naissance, puis pour chaque matiere la date et la note de chaque
+examen (QCM, TP1, TP2).
+
+En fonction de la moyenne generale obtenue, le programme attribue une
+mention :
+
+    16 <= moyenne <= 20  -> mention tres bien
+    14 <= moyenne < 16   -> mention bien
+    12 <= moyenne < 14   -> mention assez bien
+    10 <= moyenne < 12   -> mention passable
+     5 <= moyenne < 10   -> mention insuffisante
+     0 <= moyenne < 5    -> mention tres insuffisante
+
+
+--- Algorithme ---
+
+ALGORITHME MoyenneEleve
+DONNEES : nom, prenom, idSupinfo, dateNaissance (chaines)
+          matieres <- ["ALGO", "C", "JAVA"]
+          pour chaque matiere : dateQcm, noteQcm, dateTp1, noteTp1,
+          dateTp2, noteTp2 (notes reelles comprises entre 0 et 20)
+RESULTAT : la moyenne generale de l'eleve et sa mention
+
+DEBUT
+    LIRE nom
+    LIRE prenom
+    LIRE idSupinfo
+    LIRE dateNaissance
+
+    TABLEAU matieres <- ["ALGO", "C", "JAVA"]
+    sommeMoyennes <- 0
+
+    POUR chaque matiere DANS matieres FAIRE
+        ECRIRE "Matiere : ", matiere
+
+        LIRE dateQcm
+        LIRE noteQcm
+
+        LIRE dateTp1
+        LIRE noteTp1
+
+        LIRE dateTp2
+        LIRE noteTp2
+
+        moyenneMatiere <- (noteQcm * 0.40) + (noteTp1 * 0.30) + (noteTp2 * 0.30)
+        ECRIRE "Moyenne en ", matiere, " : ", moyenneMatiere
+
+        sommeMoyennes <- sommeMoyennes + moyenneMatiere
+    FIN POUR
+
+    moyenneGenerale <- sommeMoyennes / 3
+
+    SI moyenneGenerale >= 16 ET moyenneGenerale <= 20 ALORS
+        mention <- "Tres bien"
+    SINON SI moyenneGenerale >= 14 ET moyenneGenerale < 16 ALORS
+        mention <- "Bien"
+    SINON SI moyenneGenerale >= 12 ET moyenneGenerale < 14 ALORS
+        mention <- "Assez bien"
+    SINON SI moyenneGenerale >= 10 ET moyenneGenerale < 12 ALORS
+        mention <- "Passable"
+    SINON SI moyenneGenerale >= 5 ET moyenneGenerale < 10 ALORS
+        mention <- "Insuffisante"
+    SINON
+        mention <- "Tres insuffisante"
+    FIN SI
+
+    ECRIRE "Eleve : ", prenom, " ", nom, " (ID ", idSupinfo, ")"
+    ECRIRE "Ne(e) le : ", dateNaissance
+    ECRIRE "Moyenne generale : ", moyenneGenerale
+    ECRIRE "Mention : ", mention
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- note hors de l'intervalle [0, 20]  -> a rejeter/revalider a la saisie
+- moyenne exactement egale a une borne (16, 14, 12, 10, 5) -> appartient
+  a la mention superieure ; respecter l'ordre des tests SI/SINON SI
+- branche SINON finale -> couvre 0 <= moyenne < 5, ce qui suppose que
+  les notes saisies sont deja validees dans [0, 20] (moyenne jamais
+  negative)
+- dateNaissance ou dates d'examen dans un mauvais format -> a valider
+  avant d'etre stockees ou affichees
+- idSupinfo vide ou non numerique -> a valider selon le format attendu
