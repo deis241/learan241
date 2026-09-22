@@ -1,0 +1,97 @@
+4.4 CONVERTISSEUR DE CHIFFRES ROMAINS
+======================================
+
+On veut deux programmes :
+- 4.4.1 : convertir un nombre en ecriture arabe (0 a 3999) en chiffres romains.
+- 4.4.2 : convertir un nombre ecrit en chiffres romains en ecriture arabe.
+
+Rappel de correspondance :
+
+    I    V    X    L    C    D    M
+    1    5    10   50   100  500  1000
+
+Exemples : IV = 4, IX = 9, XIX = 19, XL = 40, XC = 90, CD = 400,
+CM = 900, XVII = 17, MMCDLXIX = 2469.
+
+
+--- 4.4.1 Algorithme : Arabe -> Romain ---
+
+Principe : on part des plus grandes valeurs (avec les cas
+particuliers IV, IX, XL, XC, CD, CM inclus) et on soustrait
+la valeur du tableau au nombre, en ecrivant le symbole
+correspondant, tant que c'est possible, avant de passer a la
+valeur suivante.
+
+ALGORITHME ArabeVersRomain
+DONNEES : nombre (entier, compris entre 1 et 3999)
+RESULTAT : ecriture en chiffres romains de nombre
+
+DEBUT
+    valeurs <- [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    symboles <- ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+
+    LIRE nombre
+
+    SI nombre < 1 OU nombre > 3999 ALORS
+        ECRIRE "Nombre hors limites (1 a 3999)"
+    SINON
+        resultat <- ""
+        i <- 0
+
+        TANT QUE nombre > 0 FAIRE
+            TANT QUE nombre >= valeurs[i] FAIRE
+                resultat <- resultat + symboles[i]
+                nombre <- nombre - valeurs[i]
+            FIN TANT QUE
+            i <- i + 1
+        FIN TANT QUE
+
+        ECRIRE resultat
+    FIN SI
+FIN
+
+
+--- 4.4.2 Algorithme : Romain -> Arabe ---
+
+Principe : on parcourt le mot romain de gauche a droite. Si la
+valeur d'un symbole est inferieure a celle du symbole suivant,
+on la soustrait (cas IV, IX, XL, XC, CD, CM), sinon on l'ajoute.
+
+ALGORITHME RomainVersArabe
+DONNEES : romain (chaine de caracteres, chiffres romains valides)
+RESULTAT : valeur en ecriture arabe correspondant a romain
+
+DEBUT
+    LIRE romain
+    romain <- MAJUSCULE(romain)
+    n <- LONGUEUR(romain)
+
+    total <- 0
+    i <- 0
+
+    TANT QUE i < n FAIRE
+        valeurActuelle <- VALEUR(romain[i])
+
+        SI i + 1 < n ET valeurActuelle < VALEUR(romain[i + 1]) ALORS
+            total <- total - valeurActuelle
+        SINON
+            total <- total + valeurActuelle
+        FIN SI
+
+        i <- i + 1
+    FIN TANT QUE
+
+    ECRIRE total
+FIN
+
+Ou VALEUR(caractere) renvoie :
+    I -> 1, V -> 5, X -> 10, L -> 50, C -> 100, D -> 500, M -> 1000
+
+
+--- Cas particuliers a gerer ---
+
+- nombre arabe hors de l'intervalle 1..3999  -> pas de representation romaine standard
+- nombre arabe = 0                            -> pas de chiffre romain pour zero
+- chaine romaine vide ou invalide             -> a rejeter (symbole inconnu)
+- repetitions invalides (ex: "IIII", "VV")    -> non standard, a detecter si on veut valider strictement
+- casse (majuscules/minuscules)                -> normaliser en majuscules avant de traiter

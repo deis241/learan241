@@ -16,6 +16,8 @@ const categories = [
       require('./algos/conditions/palindrome'),
       require('./algos/conditions/scrabble'),
       require('./algos/conditions/calculFraction'),
+      require('./algos/conditions/arabeVersRomain'),
+      require('./algos/conditions/romainVersArabe'),
 
     ],
   },

@@ -67,13 +67,13 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Calcul de la moyenne d'un élève</div>
+      <div class="algo-title">Convertisseur de chiffres romains</div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">la notion</div>
       <div class="learned-text">
-        Chaque matière a un QCM (40 %) et deux TP (30 % chacun) : la moyenne de matière pondère ces trois notes, et la moyenne générale est la moyenne des moyennes de matière. Pondérer, c'est donner plus ou moins de poids à une valeur avant de l'additionner aux autres.
+        Un algorithme <span class="mono" style="color: var(--accent);">glouton</span> : pour convertir un nombre en romain, on prend toujours le plus gros symbole qui rentre encore dans ce qui reste (table triée de <span class="mono" style="color: var(--accent);">M</span> à <span class="mono" style="color: var(--accent);">I</span>, cas composés <span class="mono" style="color: var(--accent);">CM/CD/XC/XL/IX/IV</span> inclus). Pour l'inverse, on lit de gauche à droite : un symbole plus petit que son voisin de droite se soustrait, sinon il s'additionne.
       </div>
     </div>
 
@@ -81,18 +81,18 @@
       <div class="section-label mono">côté tech — ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Une <span class="mono" style="color: var(--accent);">regex</span> est un motif qui décrit une forme de texte attendue, testé avec <span class="mono" style="color: var(--accent);">.test()</span> — par exemple <span class="mono" style="color: var(--accent);">/^\d{2}\/\d{2}\/\d{4}$/</span> pour une date JJ/MM/AAAA. Les ancres <span class="mono" style="color: var(--accent);">^</span> et <span class="mono" style="color: var(--accent);">$</span> forcent le motif à couvrir toute la chaîne, pas juste un fragment. Autre piège corrigé : <span class="mono" style="color: var(--accent);">forEach</span> n'attend jamais les <span class="mono" style="color: var(--accent);">await</span> de son callback — <span class="mono" style="color: var(--accent);">for...of</span> est le bon outil dès qu'une boucle est asynchrone.
+        Deux structures pour deux besoins : un <span class="mono" style="color: var(--accent);">tableau</span> ordonné quand l'ordre de parcours est l'information (arabe → romain, du plus grand au plus petit), un <span class="mono" style="color: var(--accent);">objet</span> quand on veut juste un accès direct clé → valeur (romain → arabe, <span class="mono" style="color: var(--accent);">{ I: 1, V: 5, ... }</span>). Et l'opérateur <span class="mono" style="color: var(--accent);">caractere in objet</span> teste l'existence d'une clé — pratique pour valider une saisie avant de la convertir.
       </div>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">+</span>
-      <span>bonne pratique : valider chaque saisie avec une regex dédiée (date, note, identifiant) plutôt que de faire confiance au format annoncé dans la question posée à l'utilisateur.</span>
+      <span>bonne pratique : valider la saisie (symboles romains connus) avant de lancer la conversion, plutôt que de laisser un caractère inconnu produire un <span class="mono" style="color: var(--accent);">NaN</span> silencieux.</span>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">★</span>
-      <span>bonus appris : <span class="mono" style="color: var(--accent);">exports.module = {...}</span> n'écrase pas <span class="mono" style="color: var(--accent);">module.exports</span> — ça crée juste une propriété <span class="mono" style="color: var(--accent);">module</span> dessus. Résultat : <span class="mono" style="color: var(--accent);">require()</span> renvoie <span class="mono" style="color: var(--accent);">{ module: {...} }</span> au lieu de <span class="mono" style="color: var(--accent);">{ name, run }</span>, et le menu crashe.</span>
+      <span>bonus appris — <span class="mono" style="color: var(--accent);">algo glouton</span> : à chaque étape, on prend le meilleur choix immédiat, sans jamais revenir en arrière. Ça marche pour les romains, mais pas toujours : avec des pièces 1/3/4 pour rendre 6, le glouton prend 4+1+1 (3 pièces) au lieu de l'optimal 3+3 (2 pièces). Un glouton est rapide et simple, mais il faut vérifier que le problème s'y prête avant de lui faire confiance.</span>
     </div>
 
     <div class="footer mono">
@@ -106,7 +106,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 11;
+    const CURRENT_DAY = 12;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 
