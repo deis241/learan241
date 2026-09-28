@@ -16,7 +16,6 @@ Chaque jour est aussi documenté dans [Lecons/](Lecons/) : ce qui a été fait, 
 - S'entraîner à décomposer un problème en algorithme (pseudocode) avant d'écrire du code.
 - Maîtriser les bases de la programmation : boucles, conditions, tableaux, récursion, algorithmes gloutons, programmation dynamique.
 - Garder une trace de chaque exercice pour pouvoir le relire et le relancer facilement plus tard.
-- Progresser d'un langage à l'autre (Dart, puis JavaScript) sans repartir de zéro : les mêmes notions et les mêmes exercices sont repris, seule l'implémentation change.
 
 Le détail de la démarche et de l'organisation des dossiers est dans [CONCEPT.md](CONCEPT.md).
 
