@@ -10,6 +10,7 @@ const categories = [
       require('./algos/boucles/calculPuissance'),
       require('./algos/boucles/matriceMultiplicationReel'),
       require('./algos/boucles/moyenneEleve'),
+      require('./algos/boucles/triangleDePascal'),
       require('./algos/conditions/anagrame'),
       require('./algos/conditions/rechercheMois'),
       require('./algos/conditions/rechercheMoisRecursive'),
