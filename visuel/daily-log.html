@@ -67,13 +67,13 @@
     <div class="section">
       <div class="section-label mono">algo du jour</div>
       <!-- Remplace le texte ci-dessous par l'algo du jour -->
-      <div class="algo-title">Convertisseur de chiffres romains</div>
+      <div class="algo-title">Suite de Fibonacci</div>
     </div>
 
     <div class="learned">
       <div class="section-label mono">la notion</div>
       <div class="learned-text">
-        Un algorithme <span class="mono" style="color: var(--accent);">glouton</span> : pour convertir un nombre en romain, on prend toujours le plus gros symbole qui rentre encore dans ce qui reste (table triée de <span class="mono" style="color: var(--accent);">M</span> à <span class="mono" style="color: var(--accent);">I</span>, cas composés <span class="mono" style="color: var(--accent);">CM/CD/XC/XL/IX/IV</span> inclus). Pour l'inverse, on lit de gauche à droite : un symbole plus petit que son voisin de droite se soustrait, sinon il s'additionne.
+        Chaque terme est la somme des deux précédents : <span class="mono" style="color: var(--accent);">F(n) = F(n-1) + F(n-2)</span>, avec <span class="mono" style="color: var(--accent);">F(0) = 0</span> et <span class="mono" style="color: var(--accent);">F(1) = 1</span>. Même logique que le triangle de Pascal hier — de la <span class="mono" style="color: var(--accent);">programmation dynamique</span> — mais sur une seule dimension au lieu de deux.
       </div>
     </div>
 
@@ -81,18 +81,18 @@
       <div class="section-label mono">côté tech — ce que j'ai appris</div>
       <!-- Remplace le texte ci-dessous par ce que tu as appris aujourd'hui -->
       <div class="learned-text">
-        Deux structures pour deux besoins : un <span class="mono" style="color: var(--accent);">tableau</span> ordonné quand l'ordre de parcours est l'information (arabe → romain, du plus grand au plus petit), un <span class="mono" style="color: var(--accent);">objet</span> quand on veut juste un accès direct clé → valeur (romain → arabe, <span class="mono" style="color: var(--accent);">{ I: 1, V: 5, ... }</span>). Et l'opérateur <span class="mono" style="color: var(--accent);">caractere in objet</span> teste l'existence d'une clé — pratique pour valider une saisie avant de la convertir.
+        Version <span class="mono" style="color: var(--accent);">itérative</span> plutôt que récursive naïve : on ne garde en mémoire que les deux derniers termes (<span class="mono" style="color: var(--accent);">precedent</span>, <span class="mono" style="color: var(--accent);">actuel</span>) et on avance terme par terme. La récursion naïve <span class="mono" style="color: var(--accent);">F(n-1) + F(n-2)</span> recalcule les mêmes valeurs des dizaines de fois — coût exponentiel — alors que la version itérative est en temps linéaire.
       </div>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">+</span>
-      <span>bonne pratique : valider la saisie (symboles romains connus) avant de lancer la conversion, plutôt que de laisser un caractère inconnu produire un <span class="mono" style="color: var(--accent);">NaN</span> silencieux.</span>
+      <span>bonne pratique : dès qu'un calcul récursif redemande plusieurs fois le même résultat, passer à une version itérative (ou à la mémoïsation) pour éviter l'explosion du nombre d'appels.</span>
     </div>
 
     <div class="aside mono">
       <span class="aside-label">★</span>
-      <span>bonus appris — <span class="mono" style="color: var(--accent);">algo glouton</span> : à chaque étape, on prend le meilleur choix immédiat, sans jamais revenir en arrière. Ça marche pour les romains, mais pas toujours : avec des pièces 1/3/4 pour rendre 6, le glouton prend 4+1+1 (3 pièces) au lieu de l'optimal 3+3 (2 pièces). Un glouton est rapide et simple, mais il faut vérifier que le problème s'y prête avant de lui faire confiance.</span>
+      <span>jour 15/15 — fin du challenge : glouton (romains), programmation dynamique 2D (Pascal) puis 1D (Fibonacci) — trois façons différentes de construire une solution étape par étape à partir des résultats déjà calculés.</span>
     </div>
 
     <div class="footer mono">
@@ -106,7 +106,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     // Modifie uniquement cette ligne pour avancer dans le challenge (1 à 15)
-    const CURRENT_DAY = 12;
+    const CURRENT_DAY = 15;
 
     document.getElementById('day-number').textContent = String(CURRENT_DAY).padStart(2, '0');
 

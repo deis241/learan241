@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Bilan — Challenge 15 jours terminé</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --accent: #f2b134;
+    --accent-dim: rgba(242, 177, 52, 0.16);
+    --bg: #14120f;
+    --fg: #f5f1ea;
+    --muted: #9a948a;
+    --border: #35312a;
+    --cell-border: #4a453d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0a0908; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 40px 0; font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; }
+  .export-btn {
+    padding: 14px 28px; background: var(--accent); color: #14120f; border: none;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 16px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
+  }
+  .export-btn:hover { opacity: .85; }
+  .export-btn:disabled { opacity: .6; cursor: wait; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .card {
+    width: 1080px; height: 1080px; background:
+      radial-gradient(circle at 88% -6%, var(--accent-dim), transparent 42%),
+      var(--bg);
+    color: var(--fg);
+    padding: 64px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;
+  }
+  .card > * { position: relative; z-index: 1; }
+  .card > .watermark {
+    position: absolute; top: -100px; right: -30px; font-size: 380px; font-weight: 700; line-height: 1;
+    color: transparent; -webkit-text-stroke: 1.5px var(--border); z-index: 0; pointer-events: none; user-select: none;
+  }
+  .overline { display: flex; align-items: center; justify-content: space-between; font-size: 20px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .overline-left { display: flex; align-items: center; gap: 10px; }
+  .overline .accent { color: var(--accent); }
+  .badge {
+    font-size: 14px; font-weight: 700; padding: 7px 16px; border: 1.5px solid var(--accent); color: var(--accent);
+    border-radius: 999px; letter-spacing: .1em; text-transform: uppercase;
+  }
+  .hero { display: flex; flex-direction: column; gap: 20px; }
+  .hero-row { display: flex; align-items: baseline; gap: 24px; }
+  .hero-number { font-size: 220px; font-weight: 700; line-height: .8; color: var(--accent); text-shadow: 0 0 60px var(--accent-dim); }
+  .hero-side { display: flex; flex-direction: column; gap: 8px; }
+  .hero-jours { font-size: 48px; font-weight: 700; line-height: 1; color: var(--fg); }
+  .hero-sub { font-size: 24px; font-weight: 500; color: var(--muted); }
+  .hero-rule { width: 72px; height: 3px; background: var(--accent); border: none; margin: 4px 0 0; }
+  .hero-desc { margin: 0; max-width: 880px; font-size: 24px; line-height: 1.5; color: #c9c3b8; font-weight: 500; }
+  .checklist { border: 1.5px solid var(--border); padding: 24px 32px; display: flex; flex-direction: column; gap: 4px; }
+  .checklist-label { font-size: 18px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .check-item {
+    display: flex; align-items: baseline; gap: 18px; padding: 10px 0; font-size: 20px; color: #c9c3b8;
+    border-top: 1px solid var(--border); line-height: 1.4;
+  }
+  .check-item:first-of-type { border-top: none; }
+  .check-num { font-size: 15px; color: var(--accent); min-width: 26px; flex-shrink: 0; }
+  .check-item b { color: var(--fg); font-weight: 700; }
+  .tracker-block { display: flex; flex-direction: column; gap: 14px; }
+  .tracker-label { display: flex; align-items: baseline; gap: 12px; font-size: 20px; letter-spacing: .04em; color: var(--accent); }
+  .tracker-label .muted { color: var(--muted); font-weight: 500; }
+  .tracker { display: flex; gap: 10px; }
+  .cell { width: 32px; height: 32px; border: 1.5px solid var(--cell-border); background: var(--accent); border-color: var(--accent); }
+  .footer { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; color: var(--muted); letter-spacing: .04em; }
+  .footer .accent { color: var(--accent); }
+  .aside { display: flex; align-items: baseline; gap: 10px; font-size: 19px; line-height: 1.5; color: var(--muted); }
+  .aside-label { flex-shrink: 0; color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="watermark">✓</span>
+
+    <div class="overline mono">
+      <div class="overline-left"><span class="accent">//</span><span>mapson241 — challenge algo</span></div>
+      <span class="badge">challenge terminé</span>
+    </div>
+
+    <div class="hero">
+      <div class="hero-row">
+        <span class="hero-number">15</span>
+        <div class="hero-side">
+          <span class="hero-jours">/ 15 JOURS</span>
+          <span class="hero-sub mono">bilan de la formation</span>
+          <hr class="hero-rule">
+        </div>
+      </div>
+      <p class="hero-desc">
+        15 algorithmes, du pseudocode à l'implémentation JavaScript : boucles, récursion, chaînes de caractères, matrices, algorithmes gloutons et programmation dynamique.
+      </p>
+    </div>
+
+    <div class="checklist">
+      <div class="checklist-label mono">ce que j'ai appris</div>
+      <div class="check-item"><span class="check-num mono">01</span><span><b>Itératif vs récursif</b> — la récursion naïve peut recalculer les mêmes résultats des dizaines de fois (factorielle, Fibonacci) ; l'itératif garde juste ce qu'il faut en mémoire.</span></div>
+      <div class="check-item"><span class="check-num mono">02</span><span><b>Chaînes de caractères</b> — palindromes, anagrammes, Scrabble : normaliser (majuscules, espaces) avant de comparer.</span></div>
+      <div class="check-item"><span class="check-num mono">03</span><span><b>Regex</b> — valider une saisie avec un motif ancré (<span class="mono">^...$</span>) plutôt que de faire confiance au format annoncé.</span></div>
+      <div class="check-item"><span class="check-num mono">04</span><span><b>Tableaux, matrices & objets</b> — choisir la structure selon l'usage : tableau ordonné quand l'ordre compte, objet pour un accès direct clé → valeur.</span></div>
+      <div class="check-item"><span class="check-num mono">05</span><span><b>Async/await</b> — <span class="mono">forEach</span> ignore les <span class="mono">await</span> de son callback ; <span class="mono">for...of</span> est le bon outil pour une boucle asynchrone séquentielle.</span></div>
+      <div class="check-item"><span class="check-num mono">06</span><span><b>Glouton vs programmation dynamique</b> — le glouton choisit le meilleur coup immédiat (romains), la PD réutilise les résultats déjà calculés (Pascal, Fibonacci) ; deux outils, deux types de problèmes.</span></div>
+    </div>
+
+    <div class="tracker-block">
+      <div class="tracker-label mono" id="tracker-label">15 / 15 jours <span class="muted">— challenge complet</span></div>
+      <div class="tracker" id="tracker"></div>
+    </div>
+
+    <div class="aside mono">
+      <span class="aside-label">+</span>
+      <span>15 jours, 15 algorithmes, un seul réflexe gardé : pseudocode d'abord, code ensuite.</span>
+    </div>
+
+    <div class="footer mono">
+      <span>mapson241</span>
+      <span>javascript</span>
+    </div>
+  </div>
+
+  <button class="export-btn" id="export-btn">Exporter en PNG</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    const TOTAL_DAYS = 15;
+
+    const trackerEl = document.getElementById('tracker');
+    for (let i = 1; i <= TOTAL_DAYS; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      trackerEl.appendChild(cell);
+    }
+
+    const exportBtn = document.getElementById('export-btn');
+    exportBtn.addEventListener('click', () => {
+      exportBtn.disabled = true;
+      exportBtn.textContent = 'Export en cours...';
+      html2canvas(document.querySelector('.card'), { scale: 2 }).then((canvas) => {
+        const link = document.createElement('a');
+        link.download = 'challenge-bilan-formation.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        exportBtn.disabled = false;
+        exportBtn.textContent = 'Exporter en PNG';
+      });
+    });
+  </script>
+</body>
+</html>

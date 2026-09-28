@@ -1,0 +1,56 @@
+4.6 SUITE DE FIBONACCI
+=======================
+
+La suite de Fibonacci est une suite d'entiers ou chaque terme est la
+somme des deux termes precedents, en partant de 0 et 1 :
+
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+
+Definition mathematique :
+    F(0) = 0
+    F(1) = 1
+    F(n) = F(n-1) + F(n-2)   pour n >= 2
+
+On veut afficher les n premiers termes de la suite.
+
+
+--- Algorithme ---
+
+Principe : plutot que de recalculer F(n-1) et F(n-2) a chaque fois
+(recursion naive, tres couteuse), on garde en memoire uniquement les
+deux derniers termes et on avance terme par terme (programmation
+dynamique iterative).
+
+ALGORITHME SuiteFibonacci
+DONNEES : n (entier, nombre de termes a generer)
+RESULTAT : affiche les n premiers termes de la suite de Fibonacci
+
+DEBUT
+    LIRE n
+
+    SI n < 1 ALORS
+        ECRIRE "Le nombre de termes doit etre superieur ou egal a 1"
+    SINON
+        precedent <- 0
+        actuel <- 1
+
+        ECRIRE precedent
+
+        POUR i DE 2 A n FAIRE
+            ECRIRE actuel
+            suivant <- precedent + actuel
+            precedent <- actuel
+            actuel <- suivant
+        FIN POUR
+    FIN SI
+FIN
+
+
+--- Cas particuliers a gerer ---
+
+- n = 0 ou negatif  -> rien a afficher, message d'erreur
+- n = 1             -> un seul terme affiche : 0
+- n = 2             -> deux termes affiches : 0, 1
+- grands n          -> les termes croissent tres vite (exponentiel),
+                       attention au depassement de capacite selon le
+                       langage utilise
