@@ -22,8 +22,8 @@ jobs:
       - name: Construit le dossier public
         run: |
           mkdir -p public
-          cp index.html _sidebar.md README.md public/
-          cp -r Lecons Algorithmes js public/
+          cp index.html _sidebar.md README.md CONCEPT.md public/
+          cp -r Lecons Algorithmes js Exercices public/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

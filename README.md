@@ -2,6 +2,8 @@
 
 Un algorithme par jour, du pseudocode à l'implémentation en code, pendant 15 jours. L'idée : s'entraîner à décomposer un problème avant de coder, et garder une trace de chaque exercice pour pouvoir le relire et le relancer plus tard.
 
+Dépôt : [github.com/deis241/learan241](https://github.com/deis241/learan241)
+
 ## Le concept
 
 Chaque exercice suit la même démarche en deux étapes :
