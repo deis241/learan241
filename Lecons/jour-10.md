@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (3.14) est dans [Algorithmes/matriceMultiplicationReel.txt](../Algorithmes/matriceMultiplicationReel.txt).
+Le pseudocode de l'exercice (3.14) est dans [Algorithmes/matriceMultiplicationReel.txt](../Algorithmes/matriceMultiplicationReel.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/boucles/matriceMultiplicationReel.js](../js/algos/boucles/matriceMultiplicationReel.js), et l'algo a été ajouté au menu ([js/menu.js](../js/menu.js)).
+L'implémentation JS est dans [js/algos/boucles/matriceMultiplicationReel.js](../js/algos/boucles/matriceMultiplicationReel.js ':ignore'), et l'algo a été ajouté au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Notion : multiplier une matrice par un réel
 

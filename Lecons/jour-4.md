@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (3.11) est dans [Algorithmes/palindrome.txt](../Algorithmes/palindrome.txt).
+Le pseudocode de l'exercice (3.11) est dans [Algorithmes/palindrome.txt](../Algorithmes/palindrome.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/conditions/palindrome.js](../js/algos/conditions/palindrome.js).
+L'implémentation JS est dans [js/algos/conditions/palindrome.js](../js/algos/conditions/palindrome.js ':ignore').
 
 ## Notion : qu'est-ce qu'un palindrome ?
 

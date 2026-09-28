@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (3.9) est dans [Algorithmes/fraction.txt](../Algorithmes/fraction.txt).
+Le pseudocode de l'exercice (3.9) est dans [Algorithmes/fraction.txt](../Algorithmes/fraction.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/conditions/calculFraction.js](../js/algos/conditions/calculFraction.js), ajoutée au menu ([js/menu.js](../js/menu.js)).
+L'implémentation JS est dans [js/algos/conditions/calculFraction.js](../js/algos/conditions/calculFraction.js ':ignore'), ajoutée au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Notion : la boucle qui s'arrête sur une condition de sortie
 

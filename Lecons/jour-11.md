@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (4.1) est dans [Algorithmes/moyenneEleve.txt](../Algorithmes/moyenneEleve.txt).
+Le pseudocode de l'exercice (4.1) est dans [Algorithmes/moyenneEleve.txt](../Algorithmes/moyenneEleve.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/boucles/moyenneEleve.js](../js/algos/boucles/moyenneEleve.js), et l'algo a été ajouté au menu ([js/menu.js](../js/menu.js)).
+L'implémentation JS est dans [js/algos/boucles/moyenneEleve.js](../js/algos/boucles/moyenneEleve.js ':ignore'), et l'algo a été ajouté au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Notion : la moyenne pondérée
 

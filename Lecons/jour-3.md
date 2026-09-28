@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (3.3) est dans [Algorithmes/rechercheMois.txt](../Algorithmes/rechercheMois.txt).
+Le pseudocode de l'exercice (3.3) est dans [Algorithmes/rechercheMois.txt](../Algorithmes/rechercheMois.txt ':ignore').
 
-Deux implémentations JS : la version itérative dans [js/algos/conditions/rechercheMois.js](../js/algos/conditions/rechercheMois.js), et une version récursive dans [js/algos/conditions/rechercheMoisRecursive.js](../js/algos/conditions/rechercheMoisRecursive.js).
+Deux implémentations JS : la version itérative dans [js/algos/conditions/rechercheMois.js](../js/algos/conditions/rechercheMois.js ':ignore'), et une version récursive dans [js/algos/conditions/rechercheMoisRecursive.js](../js/algos/conditions/rechercheMoisRecursive.js ':ignore').
 
 ## Notion : laisser `Date` faire le calcul
 

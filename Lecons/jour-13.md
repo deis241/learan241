@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (4.5) est dans [Algorithmes/triangleDePascal.txt](../Algorithmes/triangleDePascal.txt).
+Le pseudocode de l'exercice (4.5) est dans [Algorithmes/triangleDePascal.txt](../Algorithmes/triangleDePascal.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/boucles/triangleDePascal.js](../js/algos/boucles/triangleDePascal.js), ajoutée au menu ([js/menu.js](../js/menu.js)).
+L'implémentation JS est dans [js/algos/boucles/triangleDePascal.js](../js/algos/boucles/triangleDePascal.js ':ignore'), ajoutée au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Notion : la programmation dynamique
 

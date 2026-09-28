@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (3.12, méthode par comptage d'occurrences) est dans [Algorithmes/anagramme.txt](../Algorithmes/anagramme.txt).
+Le pseudocode de l'exercice (3.12, méthode par comptage d'occurrences) est dans [Algorithmes/anagramme.txt](../Algorithmes/anagramme.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/conditions/anagrame.js](../js/algos/conditions/anagrame.js).
+L'implémentation JS est dans [js/algos/conditions/anagrame.js](../js/algos/conditions/anagrame.js ':ignore').
 
 ## Notion : détecter un anagramme par comptage de lettres
 

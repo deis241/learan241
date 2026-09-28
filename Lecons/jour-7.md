@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice est dans [Algorithmes/modulo.txt](../Algorithmes/modulo.txt).
+Le pseudocode de l'exercice est dans [Algorithmes/modulo.txt](../Algorithmes/modulo.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/boucles/modulo.js](../js/algos/boucles/modulo.js), et l'algo a été ajouté au menu ([js/menu.js](../js/menu.js)).
+L'implémentation JS est dans [js/algos/boucles/modulo.js](../js/algos/boucles/modulo.js ':ignore'), et l'algo a été ajouté au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Notion : le modulo
 

@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (3.4) est dans [Algorithmes/calculPuissance.txt](../Algorithmes/calculPuissance.txt).
+Le pseudocode de l'exercice (3.4) est dans [Algorithmes/calculPuissance.txt](../Algorithmes/calculPuissance.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/boucles/calculPuissance.js](../js/algos/boucles/calculPuissance.js), déjà présente au menu ([js/menu.js](../js/menu.js)).
+L'implémentation JS est dans [js/algos/boucles/calculPuissance.js](../js/algos/boucles/calculPuissance.js ':ignore'), déjà présente au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Un bug retrouvé et corrigé
 

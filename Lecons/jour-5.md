@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (3.10) est dans [Algorithmes/scrabble.txt](../Algorithmes/scrabble.txt).
+Le pseudocode de l'exercice (3.10) est dans [Algorithmes/scrabble.txt](../Algorithmes/scrabble.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/conditions/scrabble.js](../js/algos/conditions/scrabble.js).
+L'implémentation JS est dans [js/algos/conditions/scrabble.js](../js/algos/conditions/scrabble.js ':ignore').
 
 ## Notion : la valeur d'un mot au Scrabble
 

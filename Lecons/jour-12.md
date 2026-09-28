@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (4.4) est dans [Algorithmes/convertisseurRomain.txt](../Algorithmes/convertisseurRomain.txt), avec les deux sens de conversion (4.4.1 et 4.4.2).
+Le pseudocode de l'exercice (4.4) est dans [Algorithmes/convertisseurRomain.txt](../Algorithmes/convertisseurRomain.txt ':ignore'), avec les deux sens de conversion (4.4.1 et 4.4.2).
 
-Les implémentations JS sont dans [js/algos/conditions/arabeVersRomain.js](../js/algos/conditions/arabeVersRomain.js) et [js/algos/conditions/romainVersArabe.js](../js/algos/conditions/romainVersArabe.js), toutes les deux ajoutées au menu ([js/menu.js](../js/menu.js)).
+Les implémentations JS sont dans [js/algos/conditions/arabeVersRomain.js](../js/algos/conditions/arabeVersRomain.js ':ignore') et [js/algos/conditions/romainVersArabe.js](../js/algos/conditions/romainVersArabe.js ':ignore'), toutes les deux ajoutées au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Notion : l'algorithme glouton (greedy)
 

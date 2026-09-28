@@ -2,9 +2,9 @@
 
 ## Ce qu'on a fait
 
-Le pseudocode de l'exercice (4.6) est dans [Algorithmes/fibonacci.txt](../Algorithmes/fibonacci.txt).
+Le pseudocode de l'exercice (4.6) est dans [Algorithmes/fibonacci.txt](../Algorithmes/fibonacci.txt ':ignore').
 
-L'implémentation JS est dans [js/algos/boucles/fibonacci.js](../js/algos/boucles/fibonacci.js), ajoutée au menu ([js/menu.js](../js/menu.js)).
+L'implémentation JS est dans [js/algos/boucles/fibonacci.js](../js/algos/boucles/fibonacci.js ':ignore'), ajoutée au menu ([js/menu.js](../js/menu.js ':ignore')).
 
 ## Notion : suite définie par récurrence
 

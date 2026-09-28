@@ -4,10 +4,10 @@
 
 Deux implémentations de la factorielle dans [js/algos/boucles/](../js/algos/boucles/) :
 
-- [factorielle.js](../js/algos/boucles/factorielle.js) — version **itérative** (boucle `for`)
-- [factoriellerecusive.js](../js/algos/boucles/factoriellerecusive.js) — version **récursive**
+- [factorielle.js](../js/algos/boucles/factorielle.js ':ignore') — version **itérative** (boucle `for`)
+- [factoriellerecusive.js](../js/algos/boucles/factoriellerecusive.js ':ignore') — version **récursive**
 
-Le pseudocode de départ est dans [Algorithmes/factorielle.txt](../Algorithmes/factorielle.txt).
+Le pseudocode de départ est dans [Algorithmes/factorielle.txt](../Algorithmes/factorielle.txt ':ignore').
 
 ## Notion : itératif vs récursif
 
@@ -36,14 +36,14 @@ Sans cas de base (ou un cas de base qu'on ne peut jamais atteindre), la récursi
 ## Erreurs repérées dans la version récursive de départ
 
 1. **La fonction `factorial` était redéclarée à chaque tour de boucle** (à l'intérieur du `do { ... }`). Une fonction pure comme celle-ci n'a pas besoin d'être recréée à chaque appel : elle doit être déclarée une seule fois, en dehors de `run`.
-2. **Le `do...while (number >= 0)` redemandait une saisie en boucle**, alors que le menu ([js/menu.js](../js/menu.js)) boucle déjà sur le choix d'un algorithme. Résultat : deux boucles imbriquées qui font la même chose.
+2. **Le `do...while (number >= 0)` redemandait une saisie en boucle**, alors que le menu ([js/menu.js](../js/menu.js ':ignore')) boucle déjà sur le choix d'un algorithme. Résultat : deux boucles imbriquées qui font la même chose.
 3. **Le seul moyen de sortir de cette boucle était de taper un nombre négatif** — mais un nombre négatif passé à `factorial` ne touche jamais le cas de base (`n === 0 || n === 1`) et partirait en récursion infinie.
 
 Le point commun de ces trois erreurs : bien identifier **où s'arrête** une boucle ou une récursion, et **combien de fois** une fonction/un bloc doit vraiment être exécuté.
 
 ## Bonnes pratiques appliquées
 
-- **`parseInt(valeur, 10)`** sur toute saisie utilisateur avant de la comparer ou de faire des calculs — `ask()` renvoie toujours une chaîne de caractères. Vu ailleurs dans le projet : [calculPuissance.js](../js/algos/boucles/calculPuissance.js).
+- **`parseInt(valeur, 10)`** sur toute saisie utilisateur avant de la comparer ou de faire des calculs — `ask()` renvoie toujours une chaîne de caractères. Vu ailleurs dans le projet : [calculPuissance.js](../js/algos/boucles/calculPuissance.js ':ignore').
 - **Gérer les cas limites** listés dans le pseudocode : `n = 0` (résultat 1), `n < 0` (non défini → message d'erreur plutôt qu'un résultat silencieusement faux).
 
 ## Écritures plus concises (pour info, pas forcément "mieux")
