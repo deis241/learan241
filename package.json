@@ -6,7 +6,8 @@
   "main": "js/menu.js",
   "scripts": {
     "start": "node js/menu.js",
-    "dev": "nodemon js/menu.js"
+    "dev": "nodemon js/menu.js",
+    "docs": "python3 -m http.server 4000"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

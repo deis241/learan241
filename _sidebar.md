@@ -1,0 +1,11 @@
+- [Accueil](/)
+
+- **Leçons**
+  - [Jour 1 — Factorielle](Lecons/jour-1.md)
+  - [Jour 2 — Anagramme](Lecons/jour-2.md)
+  - [Jour 4 — Palindrome](Lecons/jour-4.md)
+  - [Jour 5 — Scrabble](Lecons/jour-5.md)
+  - [Jour 7 — Modulo](Lecons/jour-7.md)
+  - [Jour 10 — Matrice](Lecons/jour-10.md)
+  - [Jour 11 — Moyenne élève](Lecons/jour-11.md)
+  - [Jour 12 — Chiffres romains](Lecons/jour-12.md)
