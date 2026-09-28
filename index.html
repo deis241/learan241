@@ -4,7 +4,122 @@
   <meta charset="UTF-8">
   <title>Apprentissage — mapson241</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --blue: #2b5fd9;
+      --blue-dark: #1e3f99;
+      --blue-tint: #eaf0fd;
+      --bg: #faf7f1;
+      --bg-sidebar: #f4efe4;
+      --fg: #24272e;
+      --muted: #6b6a63;
+      --border: #e6ded0;
+    }
+
+    * { font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; }
+    code, pre, kbd, .search input { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace !important; }
+
+    body { background: var(--bg); color: var(--fg); }
+
+    .sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+    }
+    .sidebar .app-name-link {
+      color: var(--blue-dark);
+      font-weight: 700;
+    }
+    .sidebar-nav a {
+      color: var(--fg);
+      opacity: .8;
+    }
+    .sidebar-nav a:hover {
+      color: var(--blue);
+      opacity: 1;
+    }
+    .sidebar-nav li.active > a {
+      color: var(--blue);
+      font-weight: 700;
+      opacity: 1;
+    }
+    .sidebar-toggle {
+      background: var(--bg-sidebar);
+    }
+    .sidebar-toggle span {
+      background: var(--blue);
+    }
+
+    .content { background: var(--bg); }
+
+    .markdown-section {
+      color: var(--fg);
+    }
+    .markdown-section h1,
+    .markdown-section h2,
+    .markdown-section h3,
+    .markdown-section h4 {
+      color: var(--blue-dark);
+      font-weight: 700;
+    }
+    .markdown-section h1 { border-bottom: 2px solid var(--blue); padding-bottom: .3em; }
+    .markdown-section h2 { border-bottom: 1px solid var(--border); padding-bottom: .25em; }
+    .markdown-section a {
+      color: var(--blue);
+      border-bottom: 1px solid var(--blue-tint);
+    }
+    .markdown-section a:hover { color: var(--blue-dark); }
+    .markdown-section strong { color: var(--blue-dark); }
+    .markdown-section blockquote {
+      border-left: 4px solid var(--blue);
+      background: var(--blue-tint);
+      color: var(--fg);
+    }
+    .markdown-section code {
+      background: var(--blue-tint);
+      color: var(--blue-dark);
+      border-radius: 4px;
+    }
+    .markdown-section pre {
+      background: #1e2430;
+      border-radius: 8px;
+    }
+    .markdown-section pre > code {
+      background: transparent;
+      color: #eef1f6;
+    }
+    .markdown-section table th,
+    .markdown-section table td {
+      border-color: var(--border);
+    }
+    .markdown-section table tr {
+      background: var(--bg);
+    }
+    .markdown-section table tr:nth-child(2n) {
+      background: var(--bg-sidebar);
+    }
+    .markdown-section hr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .search {
+      border-bottom: 1px solid var(--border);
+    }
+    .search input {
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--fg);
+    }
+    .search .results-panel {
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+    .search a:hover { background: var(--blue-tint); }
+    .search h2 { color: var(--blue-dark); }
+    .search .matching-post { border-bottom: 1px solid var(--border); }
+    .search mark { background: var(--blue-tint); color: var(--blue-dark); }
+  </style>
 </head>
 <body>
   <div id="app"></div>

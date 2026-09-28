@@ -3,7 +3,7 @@ pages:
   script:
     - mkdir -p public
     - cp index.html _sidebar.md README.md public/
-    - cp -r Lecons Algorithmes public/
+    - cp -r Lecons Algorithmes js public/
   artifacts:
     paths:
       - public
