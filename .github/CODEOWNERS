@@ -1,0 +1,4 @@
+# Toute modification du depot necessite l'approbation de @deis241
+# (a activer avec "Require review from Code Owners" dans les
+# regles de protection de la branche main)
+* @deis241
