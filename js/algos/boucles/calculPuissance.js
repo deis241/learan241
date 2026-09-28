@@ -1,14 +1,24 @@
+const { displayConsole } = require('../../utils/display');
+
 module.exports = {
   name: 'Calcul de puissance',
-  async run(ask) {
-    const nombre = parseInt(await ask('Entre le nombre : '), 10);
-    const exposant = parseInt(await ask("Entrer l'exposant : "), 10);
+  description: 'Calcule nombre eleve a la puissance exposant',
 
-    let resultat;
-    for (let i = 0; i <= nombre; i++) {
-      resultat = nombre * exposant;
+  /**
+   * Demande un nombre et un exposant, et affiche nombre eleve a la puissance exposant.
+   *
+   * @param {(question: string) => Promise<string>} ask - invite qui lit une ligne saisie au terminal
+   * @returns {Promise<void>}
+   */
+  async run(ask) {
+    const nombre = parseInt(await ask('Entrez le nombre : '), 10);
+    const exposant = parseInt(await ask("Entrez l'exposant : "), 10);
+
+    let resultat = 1;
+    for (let i = 1; i <= exposant; i++) {
+      resultat *= nombre;
     }
 
-    console.log(`la puissance de ${nombre} est:  ${resultat}`);
+    displayConsole(`${nombre} puissance ${exposant} = ${resultat}`);
   },
 };
